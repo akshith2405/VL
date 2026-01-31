@@ -11,7 +11,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: #f7c6d0;
+      background: #7b1e3a; /* burgundy */
       font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
@@ -21,12 +21,13 @@
       border-radius: 20px;
       text-align: center;
       width: 340px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.2);
     }
 
     h1 {
       font-size: 22px;
       margin-bottom: 25px;
+      color: #333;
     }
 
     .buttons {
@@ -42,12 +43,18 @@
       border-radius: 22px;
       font-size: 16px;
       cursor: pointer;
+      transition: all 0.2s ease;
     }
 
     #yes {
-      background: #ff4d6d;
+      background: #d4af37; /* gold */
       color: white;
       font-size: 18px;
+    }
+
+    #yes:hover {
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+      transform: scale(1.05);
     }
 
     #no {
@@ -66,7 +73,7 @@
 <body>
 
   <div class="card">
-    <h1>Nirali, will you be my Valentine?</h1>
+    <h1>Disha, will you be my Valentine?</h1>
 
     <div class="buttons">
       <button id="yes">Yes</button>
@@ -103,10 +110,10 @@
           display:flex;
           align-items:center;
           justify-content:center;
-          background:#f7c6d0;
+          background:#7b1e3a;
           font-family:sans-serif;
           font-size:40px;
-          color:white;">
+          color:#d4af37;">
           YAY 💖
         </div>`;
     };
