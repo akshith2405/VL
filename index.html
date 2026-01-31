@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Will you be my Valentine?</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f7c6d0;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      width: 340px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+      font-size: 22px;
+      margin-bottom: 25px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 12px 26px;
+      border: none;
+      border-radius: 22px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #yes {
+      background: #ff4d6d;
+      color: white;
+      font-size: 18px;
+    }
+
+    #no {
+      background: #e0e0e0;
+      transition: transform 0.15s ease;
+    }
+
+    .hint {
+      margin-top: 15px;
+      font-size: 12px;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>Nirali, will you be my Valentine?</h1>
+
+    <div class="buttons">
+      <button id="yes">Yes</button>
+      <button id="no">No</button>
+    </div>
+
+    <div class="hint">“No” seems a bit shy 😈</div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("no");
+
+    document.addEventListener("mousemove", (e) => {
+      const rect = noBtn.getBoundingClientRect();
+
+      const btnX = rect.left + rect.width / 2;
+      const btnY = rect.top + rect.height / 2;
+
+      const dx = e.clientX - btnX;
+      const dy = e.clientY - btnY;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+
+      if (distance < 120) {
+        const x = Math.random() * 300 - 150;
+        const y = Math.random() * 300 - 150;
+        noBtn.style.transform = `translate(${x}px, ${y}px)`;
+      }
+    });
+
+    document.getElementById("yes").onclick = () => {
+      document.body.innerHTML = `
+        <div style="
+          height:100vh;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          background:#f7c6d0;
+          font-family:sans-serif;
+          font-size:40px;
+          color:white;">
+          YAY 💖
+        </div>`;
+    };
+  </script>
+
+</body>
+</html>
