@@ -7,24 +7,81 @@
   <style>
     body {
       margin: 0;
-      padding: 40px 20px;
-      background: #7b1e3a; /* burgundy */
-      font-family: Georgia, "Times New Roman", serif;
-      color: #f5e6c8;
+      height: 100vh;
       display: flex;
       justify-content: center;
+      align-items: center;
+      background: #7b1e3a;
+      font-family: Georgia, "Times New Roman", serif;
     }
 
-    .container {
-      max-width: 720px;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.25);
+    .card {
+      background: white;
       padding: 40px;
       border-radius: 20px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+      text-align: center;
+      width: 340px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
-    img {
+    h1 {
+      font-size: 22px;
+      margin-bottom: 25px;
+      color: #333;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 12px 26px;
+      border: none;
+      border-radius: 22px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    #yes {
+      background: #d4af37;
+      color: white;
+      font-size: 18px;
+    }
+
+    #yes:hover {
+      box-shadow: 0 0 15px rgba(212,175,55,0.6);
+      transform: scale(1.05);
+    }
+
+    #no {
+      background: #e0e0e0;
+      transition: transform 0.15s ease;
+    }
+
+    .hint {
+      margin-top: 15px;
+      font-size: 12px;
+      color: #777;
+    }
+
+    /* Poem page styles */
+    .poem-container {
+      max-width: 720px;
+      padding: 40px;
+      color: #f5e6c8;
+      background: rgba(0,0,0,0.25);
+      border-radius: 20px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+      overflow-y: auto;
+      max-height: 90vh;
+    }
+
+    .poem-container img {
       width: 100%;
       max-width: 420px;
       display: block;
@@ -33,7 +90,7 @@
       box-shadow: 0 15px 40px rgba(0,0,0,0.5);
     }
 
-    p {
+    .poem-container p {
       font-size: 18px;
       line-height: 1.7;
       margin-bottom: 22px;
@@ -49,96 +106,100 @@
 
 <body>
 
-  <div class="container">
+  <div class="card">
+    <h1>Disha, will you be my Valentine?</h1>
 
-    <img src="photo.jpeg" alt="A moment worth keeping">
+    <div class="buttons">
+      <button id="yes">Yes</button>
+      <button id="no">No</button>
+    </div>
 
-    <p>In English, we say<br>
-    how quickly things can change.<br>
-    In poetry, we say<br>
-    probably friends,<br>
-    possibly lovers,<br>
-    but definitely not nothing.</p>
-
-    <p>Those were the three thoughts in my mind<br>
-    the first time your path crossed mine,<br>
-    the first time I met your eyes<br>
-    and felt time do that quiet stutter<br>
-    it pretends it doesn’t know how to do.</p>
-
-    <p>Then I learned your favorite color.<br>
-    Watched how easily you painted a smile<br>
-    across my serious disposition.<br>
-    I started practicing learning you,<br>
-    thinking about you a little too much<br>
-    in the margins of my spare time.</p>
-
-    <p>And the three thoughts rearranged themselves.<br>
-    Probably lovers,<br>
-    possibly friends,<br>
-    but definitely not nothing.</p>
-
-    <p>I have a crush on you,<br>
-    but not in the modern sense<br>
-    where affection is archived<br>
-    and measured in taps and lurks.<br>
-    I mean in the way I want to record your laugh,<br>
-    play it back to God,<br>
-    and thank Him on everyone’s behalf.</p>
-
-    <p>I mean in the way that for you,<br>
-    I would be put together.<br>
-    I would deconstruct my worst habits,<br>
-    because for you<br>
-    I would want to be better.<br>
-    And somehow,<br>
-    in doing that,<br>
-    I would become better for myself.</p>
-
-    <p>You inspire a new perspective.<br>
-    You hold up a mirror and say<br>
-    you should really be more perceptive.<br>
-    You reflect the best parts of me,<br>
-    but make room for the worst,<br>
-    improvising as we go,<br>
-    because love shouldn’t be rehearsed.</p>
-
-    <p>Those spaces might fill.<br>
-    I might not be who you thought.<br>
-    I might be someone better<br>
-    than the idea you first bought.<br>
-    And if you ever had a crush on me,<br>
-    the real me,<br>
-    I hope you’d grab a journal<br>
-    and a fully loaded pen.</p>
-
-    <p>Write me a letter.<br>
-    Say,<br>
-    I know how this might go,<br>
-    but I’m sick of being scared<br>
-    of a feeling I really want to know.</p>
-
-    <p>Serendipity, they call it,<br>
-    as I write my own letter too,<br>
-    to say<br>
-    I know how this might go,<br>
-    but I have a huge crush on you.</p>
-
-    <p>Only one letter is sent.<br>
-    The other stays folded in my chest.</p>
-
-    <p>Because I have a crush on you<br>
-    in the running-through-the-airport sort of way.<br>
-    The kind that risks embarrassment,<br>
-    missed flights,<br>
-    and everything unplanned.</p>
-
-    <p class="center">
-      That letter is hand delivered.<br>
-      And I wouldn’t have it any other way.
-    </p>
-
+    <div class="hint">“No” seems a bit shy 😈</div>
   </div>
+
+  <script>
+    const noBtn = document.getElementById("no");
+    const yesBtn = document.getElementById("yes");
+
+    document.addEventListener("mousemove", function (e) {
+      const rect = noBtn.getBoundingClientRect();
+      const btnX = rect.left + rect.width / 2;
+      const btnY = rect.top + rect.height / 2;
+
+      const dx = e.clientX - btnX;
+      const dy = e.clientY - btnY;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+
+      if (distance < 120) {
+        const x = Math.random() * 300 - 150;
+        const y = Math.random() * 300 - 150;
+        noBtn.style.transform = "translate(" + x + "px, " + y + "px)";
+      }
+    });
+
+    yesBtn.addEventListener("click", function () {
+      document.body.innerHTML = `
+        <div class="poem-container">
+          <img src="photo.jpeg" alt="A moment worth keeping">
+
+          <p>In English, we say<br>
+          how quickly things can change.<br>
+          In poetry, we say<br>
+          probably friends,<br>
+          possibly lovers,<br>
+          but definitely not nothing.</p>
+
+          <p>Those were the three thoughts in my mind<br>
+          the first time your path crossed mine,<br>
+          the first time I met your eyes<br>
+          and felt time do that quiet stutter<br>
+          it pretends it doesn’t know how to do.</p>
+
+          <p>Then I learned your favorite color.<br>
+          Watched how easily you painted a smile<br>
+          across my serious disposition.<br>
+          I started practicing learning you,<br>
+          thinking about you a little too much<br>
+          in the margins of my spare time.</p>
+
+          <p>And the three thoughts rearranged themselves.<br>
+          Probably lovers,<br>
+          possibly friends,<br>
+          but definitely not nothing.</p>
+
+          <p>I have a crush on you,<br>
+          but not in the modern sense<br>
+          where affection is archived<br>
+          and measured in taps and lurks.<br>
+          I mean in the way I want to record your laugh,<br>
+          play it back to God,<br>
+          and thank Him on everyone’s behalf.</p>
+
+          <p>I mean in the way that for you,<br>
+          I would be put together.<br>
+          I would deconstruct my worst habits,<br>
+          because for you<br>
+          I would want to be better.<br>
+          And somehow,<br>
+          in doing that,<br>
+          I would become better for myself.</p>
+
+          <p>You inspire a new perspective.<br>
+          You hold up a mirror and say<br>
+          you should really be more perceptive.<br>
+          You reflect the best parts of me,<br>
+          but make room for the worst,<br>
+          improvising as we go,<br>
+          because love shouldn’t be rehearsed.</p>
+
+          <p class="center">
+            That letter is hand delivered.<br>
+            And I wouldn’t have it any other way.
+          </p>
+        </div>
+      `;
+    });
+  </script>
 
 </body>
 </html>
